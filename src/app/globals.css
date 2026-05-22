@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(148, 163, 184, 0.12);
+  --card-glow: rgba(59, 130, 246, 0.04);
+  
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-glow: rgba(37, 99, 235, 0.15);
+  
+  --accent-blue: #3b82f6;
+  --accent-orange: #f97316;
+  --accent-green: #22c55e;
+  --accent-purple: #a855f7;
+  --accent-teal: #14b8a6;
+  
+  --grid-line: rgba(148, 163, 184, 0.05);
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+  
+  --card-bg: rgba(15, 23, 42, 0.65);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-glow: rgba(59, 130, 246, 0.12);
+  
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --primary-glow: rgba(59, 130, 246, 0.25);
+  
+  --accent-blue: #60a5fa;
+  --accent-orange: #fb923c;
+  --accent-green: #4ade80;
+  --accent-purple: #c084fc;
+  --accent-teal: #2dd4bf;
+  
+  --grid-line: rgba(255, 255, 255, 0.02);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+}
+
+/* Custom Grid Background */
+.grid-bg {
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Keyframes for organic pulsing background blobs */
+@keyframes blob-float {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.15);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blob-float-reverse {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 30px) scale(0.9);
+  }
+  66% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob-1 {
+  animation: blob-float 22s infinite ease-in-out;
+}
+
+.animate-blob-2 {
+  animation: blob-float-reverse 28s infinite ease-in-out;
+}
+
+/* Custom glow element */
+.glow-effect {
+  box-shadow: 0 0 40px 10px var(--card-glow);
+}
+
