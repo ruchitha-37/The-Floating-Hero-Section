@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import ThemeToggle from "@/components/ThemeToggle";
+
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -27,12 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} h-full antialiased`} style={{ colorScheme: "light dark" }}>
+    <html lang="en" className={`${plusJakartaSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col transition-colors duration-300">
-        <ThemeProvider>
-          <ThemeToggle />
           {children}
-        </ThemeProvider>
       </body>
     </html>
   );
