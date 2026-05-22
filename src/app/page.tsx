@@ -66,7 +66,7 @@ const JohnDoeAvatar = () => (
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full flex flex-col justify-center bg-white overflow-hidden px-4 md:px-8 lg:px-16 py-12 md:py-24">
+    <main className="relative h-screen w-full flex flex-col justify-center bg-white overflow-hidden">
       
 
 
@@ -82,12 +82,12 @@ export default function Home() {
         <div className="w-[320px] sm:w-[420px] h-[75px] sm:h-[90px] bg-[#e3eaf2] rounded-full absolute -left-[100px] top-[74%] opacity-60" />
       </div>
 
-      <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-12 relative z-10 pt-10">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 px-4 md:px-8 lg:px-16 h-full">
         
-        {/* Top Section: Typography centered */}
-        <div className="flex flex-col items-center text-center space-y-6 md:space-y-8 select-none w-full">
-          <div className="space-y-4 md:space-y-6 flex flex-col items-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] tracking-tight leading-[1.12] font-bold text-center">
+        {/* Left Column: Typography matching screenshot exactly */}
+        <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 select-none">
+          <div className="space-y-4 md:space-y-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] tracking-tight leading-[1.12] font-bold">
               <span className="block font-normal text-[#6e7e96]">
                 A single platform to
               </span>
@@ -99,14 +99,14 @@ export default function Home() {
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl lg:text-[22px] font-medium text-[#385af6] max-w-[490px] leading-[1.45] text-center">
+            <p className="text-lg sm:text-xl lg:text-[22px] font-medium text-[#385af6] max-w-[490px] leading-[1.45]">
               Track matters, coordinate schedules, manage clients, centralize documents, and handle communication - all in one system.
             </p>
           </div>
         </div>
 
-        {/* Middle Section: Scattered overlapping Active Capsules composition */}
-        <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[560px] flex items-center justify-center">
+        {/* Right Column: Scattered overlapping Active Capsules composition */}
+        <div className="lg:col-span-6 relative w-full h-[400px] sm:h-[500px] lg:h-[560px] flex items-center justify-center">
           <div className="w-full max-w-[550px] aspect-[1.1] relative scale-80 sm:scale-95 lg:scale-100 origin-center mx-auto">
             
             {/* 1. Billing capsule (Blue) - rotated clockwise (slopes down) */}
