@@ -70,12 +70,24 @@ export default function Home() {
       
 
 
-      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+      {/* Background horizontal silhouettes matching the screenshot */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        {/* Right side shapes */}
+        <div className="w-[300px] sm:w-[400px] h-[75px] sm:h-[90px] bg-[#e3eaf2] rounded-full absolute -right-[150px] top-[15%] opacity-70" />
+        <div className="w-[380px] sm:w-[480px] h-[75px] sm:h-[90px] bg-[#e3eaf2] rounded-full absolute -right-[80px] top-[32%] opacity-70" />
+        <div className="w-[250px] sm:w-[320px] h-[75px] sm:h-[90px] bg-[#e3eaf2] rounded-full absolute -right-[120px] top-[48%] opacity-70" />
         
-        {/* Left Column: Typography matching screenshot exactly */}
-        <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 md:space-y-8 select-none">
-          <div className="space-y-4 md:space-y-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] tracking-tight leading-[1.12] font-bold">
+        {/* Left side shapes */}
+        <div className="w-[280px] sm:w-[350px] h-[75px] sm:h-[90px] bg-[#e3eaf2] rounded-full absolute -left-[140px] top-[45%] opacity-60" />
+        <div className="w-[320px] sm:w-[420px] h-[75px] sm:h-[90px] bg-[#e3eaf2] rounded-full absolute -left-[100px] top-[74%] opacity-60" />
+      </div>
+
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-12 relative z-10 pt-10">
+        
+        {/* Top Section: Typography centered */}
+        <div className="flex flex-col items-center text-center space-y-6 md:space-y-8 select-none w-full">
+          <div className="space-y-4 md:space-y-6 flex flex-col items-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] tracking-tight leading-[1.12] font-bold text-center">
               <span className="block font-normal text-[#6e7e96]">
                 A single platform to
               </span>
@@ -87,14 +99,14 @@ export default function Home() {
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl lg:text-[22px] font-medium text-[#385af6] max-w-[490px] leading-[1.45]">
+            <p className="text-lg sm:text-xl lg:text-[22px] font-medium text-[#385af6] max-w-[490px] leading-[1.45] text-center">
               Track matters, coordinate schedules, manage clients, centralize documents, and handle communication - all in one system.
             </p>
           </div>
         </div>
 
-        {/* Right Column: Scattered overlapping Active Capsules composition */}
-        <div className="lg:col-span-6 relative w-full h-[400px] sm:h-[500px] lg:h-[560px] flex items-center justify-center">
+        {/* Middle Section: Scattered overlapping Active Capsules composition */}
+        <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[560px] flex items-center justify-center">
           <div className="w-full max-w-[550px] aspect-[1.1] relative scale-80 sm:scale-95 lg:scale-100 origin-center mx-auto">
             
             {/* 1. Billing capsule (Blue) - rotated clockwise (slopes down) */}
